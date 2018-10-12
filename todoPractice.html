@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    .container{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .todoList{
+        min-width: 400px;
+        min-height: 550px;
+        background-color: antiquewhite;
+    }
+
+    .todoList input {
+        width: 80%;
+        height: 5vh;
+        margin: 5px;
+        padding-left: 20px;
+        border-color: burlywood;
+        font-size: 2em;
+        text-align: left;
+        padding-right: 10px;
+    }
+
+    .listPart{
+        padding-top: 20px;
+        padding-left: 30px;
+        font-size: 2em;
+        /*justify-content: center;*/
+        /*align-items: center;*/
+        flex-direction: column;
+    }
+</style>
+
+<div class="container">
+    <div class="todoList">
+        <input type="text" id="inputTodoList">
+        <button id="addBtn">add</button>
+    </div>
+    <div class="listPart">
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="todoPrac.js"></script>
+<script>
+$(document).ready(function(){
+
+    var input = $("#inputTodoList");
+    var list = $(".listPart");
+    var btn = $("#addBtn");
+
+    btn.on("click", function(e) {
+        console.log("addclicked");
+        var userInput = input.val();
+        if(userInput.length === 0) {return; }
+
+        todoList.add({title:text}, function(){
+           list.append("<ul id=num"+idx+">" + userInput  + "<button id=removeBtn>X</button></ul>" );
+           input.val('');
+        });
+    });
+
+
+});
+</script>
+</body>
+</html>
