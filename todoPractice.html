@@ -68,6 +68,7 @@ $(document).ready(function(){
         var userInput = input.val();
         if(userInput.length === 0) {return; }
 
+        //콜백이 들어가는 위치가 2번째로 정해져 있는 건가?
         todoList.add({title:text}, function(){
            list.append("<ul id=num"+idx+">" + userInput  + "<button id=removeBtn>X</button></ul>" );
            input.val('');
